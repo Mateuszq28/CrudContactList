@@ -8,6 +8,7 @@ namespace CrudContactList.Models
         public string surname { get; set; }
         // unique
         [KeyAttribute]
+        [RegularExpression(@"^.*@.*$")]
         public string email { get; set; }
         // strong password
         public string password { get; set; }
