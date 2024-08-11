@@ -11,5 +11,6 @@ namespace CrudContactList.Data
         {
         }
         public DbSet<CrudContactList.Models.Contact> Contact { get; set; } = default!;
+        public DbSet<CrudContactList.Models.Category> Category { get; set; } = default!;
     }
 }
