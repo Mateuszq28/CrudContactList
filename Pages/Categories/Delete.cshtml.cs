@@ -20,40 +20,40 @@ namespace CrudContactList.Pages.Categories
         }
 
         [BindProperty]
-        public Category Category { get; set; } = default!;
+        public Contact Contact { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Category.FirstOrDefaultAsync(m => m.Id == id);
+            var contact = await _context.Contact.FirstOrDefaultAsync(m => m.email == id);
 
-            if (category == null)
+            if (contact == null)
             {
                 return NotFound();
             }
             else
             {
-                Category = category;
+                Contact = contact;
             }
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Category.FindAsync(id);
-            if (category != null)
+            var contact = await _context.Contact.FindAsync(id);
+            if (contact != null)
             {
-                Category = category;
-                _context.Category.Remove(Category);
+                Contact = contact;
+                _context.Contact.Remove(Contact);
                 await _context.SaveChangesAsync();
             }
 

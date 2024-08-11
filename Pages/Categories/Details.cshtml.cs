@@ -19,23 +19,23 @@ namespace CrudContactList.Pages.Categories
             _context = context;
         }
 
-        public Category Category { get; set; } = default!;
+        public Contact Contact { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Category.FirstOrDefaultAsync(m => m.Id == id);
-            if (category == null)
+            var contact = await _context.Contact.FirstOrDefaultAsync(m => m.email == id);
+            if (contact == null)
             {
                 return NotFound();
             }
             else
             {
-                Category = category;
+                Contact = contact;
             }
             return Page();
         }
