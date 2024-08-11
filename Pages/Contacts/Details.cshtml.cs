@@ -28,7 +28,7 @@ namespace CrudContactList.Pages.Contacts
                 return NotFound();
             }
 
-            var contact = await _context.Contact.FirstOrDefaultAsync(m => m.email == id);
+            var contact = await _context.Contact.FirstOrDefaultAsync(m => m.Email == id);
             if (contact == null)
             {
                 return NotFound();

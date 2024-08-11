@@ -30,7 +30,7 @@ namespace CrudContactList.Pages.Contacts
                 return NotFound();
             }
 
-            var contact =  await _context.Contact.FirstOrDefaultAsync(m => m.email == id);
+            var contact =  await _context.Contact.FirstOrDefaultAsync(m => m.Email == id);
             if (contact == null)
             {
                 return NotFound();
@@ -56,7 +56,7 @@ namespace CrudContactList.Pages.Contacts
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ContactExists(Contact.email))
+                if (!ContactExists(Contact.Email))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace CrudContactList.Pages.Contacts
 
         private bool ContactExists(string id)
         {
-            return _context.Contact.Any(e => e.email == id);
+            return _context.Contact.Any(e => e.Email == id);
         }
     }
 }

@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Subcategory[0].CategoryId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Subcategory[0].Name)
             </th>
             <th></th>
@@ -22,6 +25,9 @@
     <tbody>
 @foreach (var item in Model.Subcategory) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>

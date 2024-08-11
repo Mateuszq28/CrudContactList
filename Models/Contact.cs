@@ -4,25 +4,25 @@ namespace CrudContactList.Models
 {
     public class Contact
     {
-        public string name { get; set; }
-        public string surname { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
         // unique
         [KeyAttribute]
         [RegularExpression(@"^.*@.*$")]
-        public string email { get; set; }
+        public string Email { get; set; }
         // strong password
-        public string password { get; set; }
+        public string Password { get; set; }
         // w - combo box
-        public string category { get; set; }
+        public int CategoryId { get; set; }
         // optional
         // w - combo box or text field
-        public string? subcategory { get; set; }
+        public int? SubcategoryId { get; set; }
         // regular expression
         [RegularExpression(@"^\d{3}-\d{3}-\d{3}$")]
-        public string phone { get; set; }
+        public string Phone { get; set; }
         // only date
         [DataType(DataType.Date)]
-        public DateTime birthDate { get; set; }
+        public DateTime BirthDate { get; set; }
 
         public Contact()
         {
