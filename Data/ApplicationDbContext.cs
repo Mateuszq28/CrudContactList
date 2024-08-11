@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using CrudContactList.Models;
 
 namespace CrudContactList.Data
 {
@@ -9,5 +10,6 @@ namespace CrudContactList.Data
             : base(options)
         {
         }
+        public DbSet<CrudContactList.Models.Contact> Contact { get; set; } = default!;
     }
 }
