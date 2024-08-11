@@ -19,11 +19,11 @@ namespace CrudContactList.Pages.Categories
             _context = context;
         }
 
-        public IList<Contact> Contact { get;set; } = default!;
+        public IList<Category> Category { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Contact = await _context.Contact.ToListAsync();
+            Category = await _context.Category.ToListAsync();
         }
     }
 }

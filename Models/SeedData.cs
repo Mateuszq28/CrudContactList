@@ -95,23 +95,23 @@ public static class SeedData
                 );
                 context.SaveChanges();
             }
-            
-            // Look for any Categories.
-            if (!context.Category.Any())
+
+            // Look for any Subcategory.
+            if (!context.Subcategory.Any())
             {
 
-                context.Category.AddRange(
-                    new Category
+                context.Subcategory.AddRange(
+                    new Subcategory
                     {
                         Name = "Szef"
                     },
                     
-                    new Category
+                    new Subcategory
                     {
                         Name = "Klient"
                     },
                     
-                    new Category
+                    new Subcategory
                     {
                         Name = "Pani Basia"
                     }

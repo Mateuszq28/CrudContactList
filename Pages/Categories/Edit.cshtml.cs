@@ -21,21 +21,21 @@ namespace CrudContactList.Pages.Categories
         }
 
         [BindProperty]
-        public Contact Contact { get; set; } = default!;
+        public Category Category { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(string id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var contact =  await _context.Contact.FirstOrDefaultAsync(m => m.email == id);
-            if (contact == null)
+            var category =  await _context.Category.FirstOrDefaultAsync(m => m.Id == id);
+            if (category == null)
             {
                 return NotFound();
             }
-            Contact = contact;
+            Category = category;
             return Page();
         }
 
@@ -48,7 +48,7 @@ namespace CrudContactList.Pages.Categories
                 return Page();
             }
 
-            _context.Attach(Contact).State = EntityState.Modified;
+            _context.Attach(Category).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace CrudContactList.Pages.Categories
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ContactExists(Contact.email))
+                if (!CategoryExists(Category.Id))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace CrudContactList.Pages.Categories
             return RedirectToPage("./Index");
         }
 
-        private bool ContactExists(string id)
+        private bool CategoryExists(int id)
         {
-            return _context.Contact.Any(e => e.email == id);
+            return _context.Category.Any(e => e.Id == id);
         }
     }
 }

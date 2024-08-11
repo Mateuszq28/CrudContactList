@@ -25,7 +25,7 @@ namespace CrudContactList.Pages.Categories
         }
 
         [BindProperty]
-        public Contact Contact { get; set; } = default!;
+        public Category Category { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,7 +35,7 @@ namespace CrudContactList.Pages.Categories
                 return Page();
             }
 
-            _context.Contact.Add(Contact);
+            _context.Category.Add(Category);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
