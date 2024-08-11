@@ -24,19 +24,16 @@ public static class SeedData
                 context.Category.AddRange(
                     new Category
                     {
-                        Id = 1,
                         Name = "Business"
                     },
                     
                     new Category
                     {
-                        Id = 2,
                         Name = "Private"
                     },
                     
                     new Category
                     {
-                        Id = 3,
                         Name = "Other"
                     }
                 );
@@ -50,28 +47,24 @@ public static class SeedData
                 context.Subcategory.AddRange(
                     new Subcategory
                     {
-                        Id = 1,
                         CategoryId = 1,
                         Name = "Boss"
                     },
                     
                     new Subcategory
                     {
-                        Id = 2,
                         CategoryId = 1,
                         Name = "Client"
                     },
                     
                     new Subcategory
                     {
-                        Id = 3,
                         CategoryId = 1,
                         Name = "Mrs. Basia"
                     },
                     
                     new Subcategory
                     {
-                        Id = 4,
                         CategoryId = 3,
                         Name = "fotowoltaika"
                     }
