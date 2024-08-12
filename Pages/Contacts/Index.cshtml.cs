@@ -25,5 +25,6 @@ namespace CrudContactList.Pages.Contacts
         {
             Contact = await _context.Contact.ToListAsync();
         }
+
     }
 }
