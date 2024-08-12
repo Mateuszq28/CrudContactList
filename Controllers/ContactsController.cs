@@ -14,5 +14,12 @@ namespace CrudContactList.Controllers
         {
             return View();
         }
+
+
+        // PoST: Contacts/ShowSearchResults
+        public async Task<IActionResult> ShowSearchResults(string SearchPhrase)
+        {
+            return View();
+        }
     }
 }
